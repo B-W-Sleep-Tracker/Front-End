@@ -13,7 +13,7 @@ function Login (){
                         <label>Password</label>
                         <input placeholder='Password' type='password'/>
                     </Form.Field>
-                    <Button type='submit'>Sign Up</Button>
+                    <Button type='submit'>Log In</Button>
                 </Form>
             </div>
     );        
