@@ -3,8 +3,8 @@ import './Login.css';
 import styled from 'styled-components';
 import FacebookIcon from '../img/facebookIcon.png';
 import GoogleIcon from '../img/googleIcon.png';
+import { Form, Button } from 'semantic-ui-react';
 // import LogoMobile from '../img/logoMobile.png';
-import { Form, Checkbox } from 'semantic-ui-react';
 import Header from './Header';
 
 const Title = styled.h1`
