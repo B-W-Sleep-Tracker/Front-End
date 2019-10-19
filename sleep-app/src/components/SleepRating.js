@@ -1,7 +1,5 @@
 import React from 'react';
 import { Button } from 'semantic-ui-react';
-import FacebookIcon from '../img/facebookIcon.png';
-import GoogleIcon from '../img/googleIcon.png';
 import styled from 'styled-components';
 
 const Container = styled.div`
@@ -94,7 +92,7 @@ const SleepDuration = styled.div`
   font-style: normal;
   line-height: normal;
   letter-spacing: normal;
-  color: #000000;
+  color: #ffffff;
   margin: 129px;
   display: flex;
   flex-direction: column;
