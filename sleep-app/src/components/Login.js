@@ -1,7 +1,7 @@
 import React from 'react';
 import FacebookIcon from '../img/facebookIcon.png';
 import GoogleIcon from '../img/googleIcon.png';
-import { Form, Checkbox, Button } from 'semantic-ui-react';
+import { Form, Button } from 'semantic-ui-react';
 
 function Login() {
   return (
@@ -18,8 +18,8 @@ function Login() {
         <Button type="submit">Log In</Button>
       </Form>
       <div className="alternate-signup">
-        <img src={FacebookIcon} />
-        <img src={GoogleIcon} />
+        <img src={FacebookIcon} alt ="Facebook"/>
+        <img src={GoogleIcon} alt="Google"/>
       </div>
     </div>
   );
