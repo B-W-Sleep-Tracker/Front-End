@@ -9,10 +9,10 @@ import SleepResults from './components/SleepResults';
 
 function App() {
   return (
-    <Login />
+    // <Login />
     // <Signup />
     // <SleepTracking />
-    // <SleepRating />
+    <SleepRating />
     // <SleepResults />
   );
 }
