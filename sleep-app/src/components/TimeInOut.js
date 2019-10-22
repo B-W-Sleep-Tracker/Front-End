@@ -6,10 +6,10 @@ export default function TimerInOut(){
     }
     return(
         <div>
-            <h1 style={{ marginLeft: 130 }}>Time you went to bed!</h1>
-            <input type='time' style={{ marginLeft: 160 }}/>
-            <h1 style={{ marginLeft: 130 }}>Time You woke up!</h1>
-            <input type='time' style={{ marginLeft: 160 }}/>
+            <h1 >Time you went to bed!</h1>
+            <input type='time' />
+            <h1 >Time You woke up!</h1>
+            <input type='time' />
             <br/>
             <button onSubmit={ FireEvent() } >Submit</button>
         </div>
