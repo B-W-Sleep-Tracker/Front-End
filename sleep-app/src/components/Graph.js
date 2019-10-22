@@ -3,7 +3,7 @@ import {
   BarChart, Line, Area, Bar, XAxis, YAxis, CartesianGrid, Tooltip,
   Legend,
 } from 'recharts';
-import axiosWithAuth from "../utils/axioswithAuth";
+// import axiosWithAuth from "../utils/axioswithAuth";
 import PrivateRoute from '../utils/PrivateRoute';
 
 const initialTime = [
@@ -44,16 +44,16 @@ const TimesChart = ({ times, updateTimes}) => {
     setTimeToEdit(time);
   };
 
-  const renewTime = () => {
-    axiosWithAuth()
-    .get ("times")
-    .then(res => {
-      updateTimes(res.data);
-    })
-    .catch(err => {
-      console.log("Error: ", err);
-    });
-  };
+  // const renewTime = () => {
+  //   axiosWithAuth()
+  //   .get ("times")
+  //   .then(res => {
+  //     updateTimes(res.data);
+  //   })
+  //   .catch(err => {
+  //     console.log("Error: ", err);
+  //   });
+  // };
 
   // const saveEdit = e => {
   //   e.preventDefault();
@@ -82,19 +82,19 @@ const TimesChart = ({ times, updateTimes}) => {
   //   });
   // };
 
-  const deleteTime = time => {
+  // const deleteTime = time => {
     // make a delete request to delete the selected time
-    axiosWithAuth ()
-    .delete (`sleep/${time.id}`)
-    .then(res => {
-setTimeToEdit (initialTime);
-setEditing (false);
-renewTime();
-    })
-    .catch(err => {
-      console.log("Error: ", err);
-    });
-  };
+//     axiosWithAuth ()
+//     .delete (`sleep/${time.id}`)
+//     .then(res => {
+// setTimeToEdit (initialTime);
+// setEditing (false);
+// renewTime();
+//     })
+//     .catch(err => {
+//       console.log("Error: ", err);
+//     });
+//   };
 
 const handleAddTime = e => {
   e.preventDefault();
@@ -155,11 +155,11 @@ return(
  
 </BarChart>
 
-      <span>
+      {/* <span>
         <span className="delete" onClick={() => deleteTime(setTimeToEdit)}>
         </span>{" "}
         {setTimeToEdit.setTimeToEdit}
-      </span>
+      </span> */}
 
  
 
