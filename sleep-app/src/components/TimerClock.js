@@ -45,9 +45,9 @@ class TimerClock extends React.Component {
             minutes: '' // responsible for the minutes
         }
 
-        this.secondsRemaining;
+        //this.intervalHandle;
 
-        this.intervalHandle;
+        //this.secondsRemaining;
     
         this.handleChange = this.handleChange.bind(this);
 
@@ -94,7 +94,7 @@ class TimerClock extends React.Component {
     }
 
     startCountDown() {
-        this.intervalHandle = setInterval(this.tick, 1000);
+        this.intervalHandle = setInterval(this.tick, 10);
 
         let time = this.state.minutes;
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import TimerClock from './components/TimerClock';
+import TimeInOut from './components/TimeInOut';
 
 function App() {
   
@@ -11,7 +11,7 @@ function App() {
     // <SleepTracking />
     // <SleepRating />
     // <SleepResults />
-    <TimerClock/>
+    <TimeInOut />
   );
 }
 
