@@ -79,6 +79,8 @@ const ButtonStyle = styled.button`
   color: #f2f2f2;
   margin-top: 39px;
   margin-left: 134px;
+  border: none;
+  box-shadow: 1px 4px 8px 1px #888888;
 `;
 
 const AlternateLoginStyle = styled.div`

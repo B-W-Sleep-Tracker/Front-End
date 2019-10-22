@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import LogoMobile from '../img/logoMobile.png';
 
 const HeaderStyle = styled.div`
-  width: 375px;
+  width: 100%;
   height: 40px;
   background-color: #000000;
   display: flex;
