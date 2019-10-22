@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function TimerInOut(){
     const FireEvent = () =>{
-        debug.log("TODO: Make this data go somewhere")
+        console.log("TODO: Make this data go somewhere");
     }
     return(
         <div>
@@ -10,7 +10,7 @@ export default function TimerInOut(){
             <input type='time' style={{ marginLeft: 160 }}/>
             <h1 style={{ marginLeft: 130 }}>Time You woke up!</h1>
             <input type='time' style={{ marginLeft: 160 }}/>
-            <button onClick={FireEvent()} />
+            <button onClick={FireEvent()}>Submit</button>
         </div>
 
     )
