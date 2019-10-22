@@ -10,7 +10,8 @@ export default function TimerInOut(){
             <input type='time' style={{ marginLeft: 160 }}/>
             <h1 style={{ marginLeft: 130 }}>Time You woke up!</h1>
             <input type='time' style={{ marginLeft: 160 }}/>
-            <button onClick={FireEvent()}>Submit</button>
+            <br/>
+            <button onSubmit={ FireEvent() } >Submit</button>
         </div>
 
     )
