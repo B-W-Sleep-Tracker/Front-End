@@ -22,8 +22,9 @@ function App() {
       {/* <PrivateRoute path="/graph" component={Graph} /> */}
       <Graph />
     </div>
+
     // {/* </Router> */}
-  );
+ );
 }
 
 export default App;
