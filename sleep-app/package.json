@@ -12,7 +12,7 @@
     "react-scripts": "3.2.0",
     "react-strap": "^0.0.1",
     "recharts": "^1.8.3",
-    "semantic-ui-react": "^0.88.1"
+    "semantic-ui-react": "^0.88.1",
     "styled-components": "^4.4.0"
   },
   "scripts": {
