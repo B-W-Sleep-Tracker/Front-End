@@ -12,8 +12,8 @@ function App() {
     // <Login />
     // <Signup />
     // <SleepTracking />
-    <SleepRating />
-    // <SleepResults />
+    // <SleepRating />
+    <SleepResults />
   );
 }
 

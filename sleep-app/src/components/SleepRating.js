@@ -112,26 +112,25 @@ const TimerText = styled.div`
 `;
 function SleepRating() {
   return (
-    
-      <Container>
-        <Header>
-            <Menu>
-              <MenuLines></MenuLines>
-              <MenuLines></MenuLines>
-              <MenuLines></MenuLines>
-            </Menu>
-            <LogoContainer>
-              <LogoImg>Opti-sleep</LogoImg>
-            </LogoContainer>
-            <LinksContainer>
-              <Links>
-                <UserLogo></UserLogo> {/* TODO: Replace with User Logo */}
-              </Links>
-              <Links>Sign In</Links>
-              <Ellipse></Ellipse>
-              <Links>Sign Up</Links>
-            </LinksContainer>
-          </Header>
+    <Container>
+      <Header>
+        <Menu>
+          <MenuLines></MenuLines>
+          <MenuLines></MenuLines>
+          <MenuLines></MenuLines>
+        </Menu>
+        <LogoContainer>
+          <LogoImg>Opti-sleep</LogoImg>
+        </LogoContainer>
+        <LinksContainer>
+          <Links>
+            <UserLogo></UserLogo> {/* TODO: Replace with User Logo */}
+          </Links>
+          <Links>Sign In</Links>
+          <Ellipse></Ellipse>
+          <Links>Sign Up</Links>
+        </LinksContainer>
+      </Header>
       <div className="top-content">
         <SleepDuration>
           <p>Sleep Duration</p>
@@ -145,16 +144,16 @@ function SleepRating() {
         <h2>How was your sleep?</h2>
         <div className="buttons">
           <Button type="submit">
-            <img src=""></img>
+            <img src="" alt=""></img>
           </Button>
           <Button type="submit">
-            <img src=""></img>
+            <img src="" alt=""></img>
           </Button>
           <Button type="submit">
-            <img src=""></img>
+            <img src="" alt=""></img>
           </Button>
           <Button type="submit">
-            <img src=""></img>
+            <img src="" alt=""></img>
           </Button>
         </div>
       </div>

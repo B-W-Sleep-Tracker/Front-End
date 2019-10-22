@@ -3,7 +3,7 @@ import './Login.css';
 import styled from 'styled-components';
 import FacebookIcon from '../img/facebookIcon.png';
 import GoogleIcon from '../img/googleIcon.png';
-import { Form, Button } from 'semantic-ui-react';
+import { Form } from 'semantic-ui-react';
 // import LogoMobile from '../img/logoMobile.png';
 import Header from './Header';
 
@@ -118,8 +118,8 @@ function Login() {
       </FormStyle>
 
       <AlternateLoginStyle>
-        <img src={FacebookIcon} />
-        <img src={GoogleIcon} />
+        <img src={FacebookIcon} alt="Facebook Logo" />
+        <img src={GoogleIcon} alt="Google Logo" />
       </AlternateLoginStyle>
     </div>
   );
