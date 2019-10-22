@@ -6,14 +6,21 @@ import Signup from './components/Signup';
 import SleepTracking from './components/SleepTracking';
 import SleepRating from './components/SleepRating';
 import SleepResults from './components/SleepResults';
+import Graph from "./components/Graph";
+import DaysOfWeek from "./components/DaysOfWeek";
 
 function App() {
   return (
     // <Login />
     // <Signup />
     // <SleepTracking />
-    <SleepRating />
+    // <SleepRating />
     // <SleepResults />
+    <div>
+      <Graph />
+    <DaysOfWeek />
+    </div>
+
   );
 }
 
