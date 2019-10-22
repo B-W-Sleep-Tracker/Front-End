@@ -1,3 +1,9 @@
+/* body {
+  width: 374px;
+  height: 812px;
+  background-color: #c4c4c4;
+} */
+
 .App {
   text-align: center;
 }
@@ -20,3 +26,35 @@
 .App-link {
   color: #09d3ac;
 }
+
+
+.recharts-surface {
+  background-color: #c4c4c4;
+  text-align: center;
+  padding: 15px;
+}
+
+.recharts-wrapper {
+  margin: auto;
+}
+form {
+  display: flex;
+  margin: 50px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+padding: 20px;
+  width: 300px;
+  margin-left:40%;
+  /* margin-left: 750px; */
+  background: lightgoldenrodyellow;
+}
+
+label{
+  margin: 10px;
+  border-radius: 5px;
+  outline: none;
+}
+
+
+
