@@ -20,6 +20,7 @@ function App() {
       <Graph />
     <DaysOfWeek />
     </div>
+
   );
 }
 
