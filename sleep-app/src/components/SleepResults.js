@@ -51,7 +51,7 @@ const TextContainer = styled.div`
   margin-top: 51px;
 `;
 
-const TextStyle = styled.div`
+const TextStyle = styled.p`
   font-family: Roboto;
   font-size: 24px;
   font-weight: normal;
