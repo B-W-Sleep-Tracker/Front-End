@@ -6,6 +6,7 @@ import GoogleIcon from '../img/googleIcon.png';
 import { Form, Button } from 'semantic-ui-react';
 // import LogoMobile from '../img/logoMobile.png';
 import Header from './Header';
+import {axiosWithAuth} from "../utils/axioswithAuth";
 
 const Title = styled.h1`
   width: 100%;
@@ -89,7 +90,36 @@ const AlternateLoginStyle = styled.div`
   margin-top: 43px;
 `;
 
-function Login() {
+class Login extends React.Component {
+  state = {
+    credentials: {
+      email: ``,
+      password:``
+    }
+  };
+
+  handleChange = e => {
+    this.setState({
+      credentials: {
+        ...this.state.credentials,
+        [e.target.name]: e.target.value
+      }
+    });
+  };
+
+  login = e => {
+    e.preventDefault();
+    axiosWithAuth()
+    .post(`/login`, this.state.credentials)
+    .then(res => {
+      localStorage.setItem(`token`, res.data.payload);
+      this.props.history.push(`/protected`);
+    })
+    .catch(err => console.log(err));
+  };
+
+}
+function LoginForm() {
   return (
     <div>
       <Header />
@@ -97,21 +127,26 @@ function Login() {
         <Title>Welcome to Opti-Sleep</Title>
       </TitleContainer>
       <FormStyle>
-        <Form className="form">
+        <Form onSubmit= {this.login} className="form">
           <FieldStyle>
             <Form.Field>
               <LabelStyle>Email</LabelStyle>
-              <InputStyle placeholder="Email" type="email" />
+              <InputStyle placeholder="Email" type="email" name="email"
+              value ={this.state.credentials.email}
+              onChange={this.handleChange}
+               />
             </Form.Field>
           </FieldStyle>
           <FieldStyle>
             <Form.Field>
               <LabelStyle>Password</LabelStyle>
-              <InputStyle placeholder="Password" type="password" />
+              <InputStyle placeholder="Password" type="password" name= "password" 
+              value={this.state.credentials.password}
+              onChange={this.handle}  />
             </Form.Field>
           </FieldStyle>
 
-          <ButtonStyle type="submit">Sign In</ButtonStyle>
+          <ButtonStyle type="submit">Log In</ButtonStyle>
         </Form>
       </FormStyle>
 

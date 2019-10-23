@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import Login from './components/Login.js';
 import Signup from './components/Signup';
@@ -8,18 +7,28 @@ import SleepRating from './components/SleepRating';
 import SleepResults from './components/SleepResults';
 import Graph from "./components/Graph";
 
+
+import PrivateRoute from './utils/PrivateRoute';
+
+
 function App() {
   return (
+    // <Router>
     // <Login />
     // <Signup />
     // <SleepTracking />
     <SleepRating />
     // <SleepResults />
-    // <div>
-    //   {/* <Graph />
-    // </div>
 
-  );
+    <div className="App">
+      {/* <Route exact path="/" component={Login} /> */}
+      {/* <PrivateRoute path="/graph" component={Graph} /> */}
+      <Graph />
+    </div>
+
+
+    // {/* </Router> */}
+ );
 }
 
 export default App;
