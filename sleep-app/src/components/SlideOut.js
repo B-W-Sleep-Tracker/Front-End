@@ -1,24 +1,45 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 import Header from "./Header";
+import Alarm from "../img/Alarm.png";
 
-const Container = styled.div`
+const Nav = styled.nav`
   width: 276px;
+  background-color: blue;
 `;
-
-function SlideOut() {
-  return(
-    <div>
-    <Header />
-    <div className="selectors">
-      <div className="alarms" img src="">Alarms</div>
-      <div className="stats" img src="">Stats</div>
-      <div className="Graph" img src="">Graph</div>
-      <div className="lullaby" img src="">Lullaby</div>
-      <div className="pro" img src="">Pro</div>
-    </div>
-    </div>
+const Text = styled.h1`
+  color: red;
+`;
+function SlideOut() { 
+  return (
+    <Nav>  
+      <a>
+        <img src={Alarm}/>
+        <h1>Alarms</h1>
+      </a>
+      <a>
+        <img src=""/>
+        <h1>Stats</h1>
+      </a>
+      <a>
+        <img src=""/>
+        <h1>Graph</h1>
+      </a>
+      <a>
+        <img src=""/>
+        <h1>Lullaby</h1>
+      </a>
+      <a>
+        <img src=""/>
+        <h1>Pro</h1>
+      </a>
+      <a>
+        <img src=""/>
+        <h1>Settings</h1>
+      </a>
+    </Nav>
+ 
   );
-};
+}
 
 export default SlideOut;
