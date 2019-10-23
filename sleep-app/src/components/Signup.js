@@ -57,10 +57,9 @@ const InputStyle = styled.input`
 
 const FieldStyle = styled.div`
   &:first-child {
-    padding-top: 50px;
+    padding-top: 17px;
   }
-  padding-left: 27px;
-  padding-top: 11px;
+  padding-left: 17px;
 `;
 
 const ButtonStyle = styled.button`
