@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import LogoMobile from '../img/logoMobile.png';
+import SlideOut from './SlideOut';
 
 const HeaderStyle = styled.div`
   width: 100%;
