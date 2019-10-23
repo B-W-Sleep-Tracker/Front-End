@@ -3,10 +3,10 @@ import './Login.css';
 import styled from 'styled-components';
 import FacebookIcon from '../img/facebookIcon.png';
 import GoogleIcon from '../img/googleIcon.png';
-import { Form, Button } from 'semantic-ui-react';
+import { Form } from 'semantic-ui-react';
 // import LogoMobile from '../img/logoMobile.png';
 import Header from './Header';
-import {axiosWithAuth} from "../utils/axioswithAuth";
+import { axiosWithAuth } from '../utils/axioswithAuth';
 
 const Title = styled.h1`
   width: 100%;
@@ -80,6 +80,8 @@ const ButtonStyle = styled.button`
   color: #f2f2f2;
   margin-top: 39px;
   margin-left: 134px;
+  border: none;
+  box-shadow: 1px 4px 8px 1px #888888;
 `;
 
 const AlternateLoginStyle = styled.div`
@@ -90,35 +92,35 @@ const AlternateLoginStyle = styled.div`
   margin-top: 43px;
 `;
 
-class Login extends React.Component {
-  state = {
-    credentials: {
-      email: ``,
-      password:``
-    }
-  };
+// class Login extends React.Component {
+//   state = {
+//     credentials: {
+//       email: ``,
+//       password: ``
+//     }
+//   };
 
-  handleChange = e => {
-    this.setState({
-      credentials: {
-        ...this.state.credentials,
-        [e.target.name]: e.target.value
-      }
-    });
-  };
+//   handleChange = e => {
+//     this.setState({
+//       credentials: {
+//         ...this.state.credentials,
+//         [e.target.name]: e.target.value
+//       }
+//     });
+//   };
 
-  login = e => {
-    e.preventDefault();
-    axiosWithAuth()
-    .post(`/login`, this.state.credentials)
-    .then(res => {
-      localStorage.setItem(`token`, res.data.payload);
-      this.props.history.push(`/protected`);
-    })
-    .catch(err => console.log(err));
-  };
+//   login = e => {
+//     e.preventDefault();
+//     axiosWithAuth()
+//       .post(`/login`, this.state.credentials)
+//       .then(res => {
+//         localStorage.setItem(`token`, res.data.payload);
+//         this.props.history.push(`/protected`);
+//       })
+//       .catch(err => console.log(err));
+//   };
+// }
 
-}
 function LoginForm() {
   return (
     <div>
@@ -127,22 +129,30 @@ function LoginForm() {
         <Title>Welcome to Opti-Sleep</Title>
       </TitleContainer>
       <FormStyle>
-        <Form onSubmit= {this.login} className="form">
+        {/* <Form onSubmit={this.login} className="form"> */}
+        <Form className="form">
           <FieldStyle>
             <Form.Field>
               <LabelStyle>Email</LabelStyle>
-              <InputStyle placeholder="Email" type="email" name="email"
-              value ={this.state.credentials.email}
-              onChange={this.handleChange}
-               />
+              <InputStyle
+                placeholder="Email"
+                type="email"
+                name="email"
+                // value={this.state.credentials.email}
+                // onChange={this.handleChange}
+              />
             </Form.Field>
           </FieldStyle>
           <FieldStyle>
             <Form.Field>
               <LabelStyle>Password</LabelStyle>
-              <InputStyle placeholder="Password" type="password" name= "password" 
-              value={this.state.credentials.password}
-              onChange={this.handle}  />
+              <InputStyle
+                placeholder="Password"
+                type="password"
+                name="password"
+                // value={this.state.credentials.password}
+                // onChange={this.handle}
+              />
             </Form.Field>
           </FieldStyle>
 
@@ -151,11 +161,11 @@ function LoginForm() {
       </FormStyle>
 
       <AlternateLoginStyle>
-        <img src={FacebookIcon} />
-        <img src={GoogleIcon} />
+        <img src={FacebookIcon} alt="Facebook Logo" />
+        <img src={GoogleIcon} alt="Google Logo" />
       </AlternateLoginStyle>
     </div>
   );
 }
 
-export default Login;
+export default LoginForm;
