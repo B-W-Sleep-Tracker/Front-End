@@ -7,7 +7,9 @@ import SleepRating from './components/SleepRating';
 import SleepResults from './components/SleepResults';
 import Graph from "./components/Graph";
 
+
 import PrivateRoute from './utils/PrivateRoute';
+
 
 function App() {
   return (
@@ -15,13 +17,15 @@ function App() {
     // <Login />
     // <Signup />
     // <SleepTracking />
-    // <SleepRating />
+    <SleepRating />
     // <SleepResults />
+
     <div className="App">
       {/* <Route exact path="/" component={Login} /> */}
       {/* <PrivateRoute path="/graph" component={Graph} /> */}
       <Graph />
     </div>
+
 
     // {/* </Router> */}
  );

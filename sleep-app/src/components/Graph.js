@@ -1,5 +1,6 @@
 
 
+
 import React, { PureComponent } from 'react';
 import {
   BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend,
@@ -54,4 +55,5 @@ export default class Example extends PureComponent {
     );
   }
 }
+
 
