@@ -1,44 +1,67 @@
-import React from "react";
-import styled from "styled-components";
-import Header from "./Header";
-import Alarm from "../img/Alarm.png";
+import React from 'react';
+import styled from 'styled-components';
+import Header from './Header';
+import Bell from '../img/bell.png';
+import Stats from '../img/stats_icon.png';
+import Graph from '../img/graph_icon.png';
+import Lullaby from '../img/lullaby_icon.png';
+import Pro from '../img/pro_icon.png';
+import Settings from '../img/settings_icon.png';
 
 const Nav = styled.nav`
   width: 276px;
   background-color: blue;
+  padding-top: 64px;
+  height: 812px;
+  opacity: 0.7;
 `;
-const Text = styled.h1`
-  color: red;
+
+const LinkStyle = styled.a`
+  display: flex;
+  border: solid 1px white;
+  border-left: none;
+  align-items: center;
+  color: white;
+  font-size: 11px;
+  height: 6%;
 `;
-function SlideOut() { 
+
+const ImgStyle = styled.img`
+  color: white;
+  width: 30px;
+  height: 30px;
+  padding-left: 15px;
+  padding-right: 30px;
+`;
+
+function SlideOut() {
   return (
-    <Nav>  
-      <a>
-        <img src={Alarm}/>
+    <Nav className="nav">
+      <LinkStyle className="link-Style">
+        <ImgStyle src={Bell} className="img-style" />
         <h1>Alarms</h1>
-      </a>
-      <a>
-        <img src=""/>
+      </LinkStyle>
+      <LinkStyle className="link-Style">
+        <ImgStyle src={Stats} className="img-style" />
         <h1>Stats</h1>
-      </a>
-      <a>
-        <img src=""/>
+      </LinkStyle>
+      <LinkStyle className="link-Style">
+        <ImgStyle src={Graph} className="img-style" />
         <h1>Graph</h1>
-      </a>
-      <a>
-        <img src=""/>
+      </LinkStyle>
+      <LinkStyle className="link-Style">
+        <ImgStyle src={Lullaby} className="img-style" />
         <h1>Lullaby</h1>
-      </a>
-      <a>
-        <img src=""/>
+      </LinkStyle>
+      <LinkStyle className="link-Style">
+        <ImgStyle src={Pro} className="img-style" />
         <h1>Pro</h1>
-      </a>
-      <a>
-        <img src=""/>
+      </LinkStyle>
+      <LinkStyle className="link-Style">
+        <ImgStyle src={Settings} className="img-style" />
         <h1>Settings</h1>
-      </a>
+      </LinkStyle>
     </Nav>
- 
   );
 }
 

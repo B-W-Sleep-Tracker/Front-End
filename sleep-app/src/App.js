@@ -7,7 +7,9 @@ import SleepRating from './components/SleepRating';
 import SleepResults from './components/SleepResults';
 import Graph from './components/Graph';
 import PrivateRoute from './utils/PrivateRoute';
-import SlideOut from "./components/SlideOut";
+import SlideOut from './components/SlideOut';
+import Alarms from './components/Alarms';
+
 function App() {
   return (
     // <Router>
@@ -16,7 +18,8 @@ function App() {
     // <SleepTracking />
     // <SleepRating />
     // <SleepResults />
-    <SlideOut />
+    // <SlideOut />
+    <Alarms />
   );
 }
 
