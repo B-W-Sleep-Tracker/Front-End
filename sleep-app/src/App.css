@@ -6,6 +6,8 @@
 
 .App {
   text-align: center;
+  padding: 20px;
+  margin: 20px;;
 }
 
 .App-logo {
@@ -30,13 +32,17 @@
 
 .recharts-surface {
   background-color: #c4c4c4;
-  text-align: center;
-  padding: 25px;
+  padding: 60px;
+  
+}
+
+.recharts-cartesian-grid {
+  padding: 20%;
 }
 
 .recharts-wrapper {
   margin: auto;
-  padding: 30px;
+  padding: 85px;
 }
 
 label{
@@ -49,5 +55,41 @@ label{
   padding: 50px;
 }
 
+button   {
+  margin-top:60px;
+  width: 140px;
+  height: 150px;
+  opacity: 0.75;
+  border-radius: 20px;
+  background-color: #4a3063;
+}
+
+.btn-text-top {
+  width: 56px;
+  height: 28px;
+  font-family: Roboto;
+  font-size: 24px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #ffffff;
+  margin: auto;
+}
+
+.btn-text-btm {
+  width: 56px;
+  height: 28px;
+  font-family: Roboto;
+  font-size: 24px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #ffffff;
+  margin:auto;
+}
 
 
