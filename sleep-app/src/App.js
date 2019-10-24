@@ -1,6 +1,6 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
 import './App.css';
+import { Route, path } from "react-router-dom";
 import LoginForm from './components/LoginForm';
 import Signup from './components/Signup';
 import SleepTracking from './components/SleepTracking';
@@ -16,20 +16,14 @@ import Alarms from './components/Alarms';
 
 function App() {
   return (
-    // <Router>
-    // <LoginForm />
-    // <Signup />
-    // <SleepTracking />
-    // <SleepRating />
-    // <SleepResults />
-    // <SlideOut />
     <main>
-      <Route exact path="/LoginForm" component={LoginForm} />
-      <Route exact path="/Signup" component={Signup} />
-      <Route exact path="/SleepTracking" component={SleepTracking} />
-      <Route exact path="/SleepRating" component={SleepRating} />
-      <Route exact path="/SleepResults" component={SleepResults} />
-      <Route exact path="/SlideOut" component={SlideOut} />
+      <Route  path ="/login" component={LoginForm} />
+      <Route  path ="/sign-up" component={Signup}/>
+      <Route  path ="/sleep-tracking" component={SleepTracking} />
+      <Route path="/sleep-rating" component={SleepRating} />
+      <Route path="/sleep-results" component={SleepResults}/>
+      <Route path="/slide-out" component={SlideOut} />
+      <Route path="/graph" component={Graph} />
       <Route exact path="/" component={Alarms} />
     </main>
   );

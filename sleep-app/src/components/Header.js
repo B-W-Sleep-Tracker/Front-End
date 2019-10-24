@@ -1,8 +1,8 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import LogoMobile from '../img/logoMobile.png';
 import SlideOut from './SlideOut';
+import { Route, path, Link } from "react-router-dom";
 
 const HeaderStyle = styled.div`
   width: 100%;
@@ -77,23 +77,24 @@ function Header() {
   return (
     <div>
       <HeaderStyle>
-        <Menu>
-          <MenuLines></MenuLines>
-          <MenuLines></MenuLines>
-          <MenuLines></MenuLines>
-        </Menu>
+        <Link to={`/slide-out`}>
+          <Menu>
+            <MenuLines></MenuLines>
+            <MenuLines></MenuLines>
+            <MenuLines></MenuLines>
+          </Menu>
+        </Link>
         <LogoContainer>
           <LogoImg src={LogoMobile} />
         </LogoContainer>
         <LinksContainer>
-          <Link to={`/LoginForm`}>
-            <Links>Sign In</Links>
-          </Link>
-
+        <Link to={`/login`}>
+          <Links>Sign In</Links>
+        </Link>
           <Ellipse></Ellipse>
-          <Link to={`/Signup`}>
-            <Links>Sign Up</Links>
-          </Link>
+        <Link to={`/sign-up`}>
+          <Links>Sign Up</Links>
+        </Link>
         </LinksContainer>
       </HeaderStyle>
     </div>
