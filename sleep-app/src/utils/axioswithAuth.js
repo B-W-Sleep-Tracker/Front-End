@@ -1,12 +1,14 @@
 import axios from "axios";
 
-export const axiosWithAuth = () => {
+const axiosWithAuth = () => {
   const token = localStorage.getItem("token");
 
   return axios.create({
-    // baseURL: "samir URL here",
+    baseURL: "https://sleeptrack.herokuapp.com/api",
     headers: {
-      Authorization: token
+      authorization: token
     }
   });
 };
+
+export default axiosWithAuth;

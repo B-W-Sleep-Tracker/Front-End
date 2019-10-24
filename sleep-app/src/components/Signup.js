@@ -1,10 +1,11 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './Login.css';
 import styled from 'styled-components';
 import FacebookIcon from '../img/facebookIcon.png';
 import GoogleIcon from '../img/googleIcon.png';
 import { Form } from 'semantic-ui-react';
 import Header from './Header';
+import axiosWithAuth from "../utils/axioswithAuth";
 
 const Title = styled.h1`
   width: 100%;
@@ -89,48 +90,110 @@ const AlternateLoginStyle = styled.div`
   margin-top: 43px;
 `;
 
-function SignUp() {
+// function SignUp() {
+//   return (
+//     <div>
+//       <Header />
+//       <TitleContainer>
+//         <Title>Welcome to Opti-Sleep</Title>
+//       </TitleContainer>
+//       <FormStyle>
+//         <Form className="form">
+//           <FieldStyle>
+//             <Form.Field>
+//               <LabelStyle>Email</LabelStyle>
+//               <InputStyle placeholder="Email" type="email" />
+//             </Form.Field>
+//           </FieldStyle>
+//           <FieldStyle>
+//             <Form.Field>
+//               <LabelStyle>Password</LabelStyle>
+//               <InputStyle placeholder="Password" type="password" />
+//             </Form.Field>
+//           </FieldStyle>
+//           <FieldStyle>
+//             <Form.Field>
+//               <LabelStyle>Age</LabelStyle>
+//               <InputStyle
+//                 placeholder="Age"
+//                 type="number"
+//                 style={{ width: 80 }}
+//               />
+//             </Form.Field>
+//           </FieldStyle>
+
+//           <ButtonStyle type="submit">Sign In</ButtonStyle>
+//         </Form>
+//       </FormStyle>
+
+//       <AlternateLoginStyle>
+//         <img src={FacebookIcon} alt="Facebook Logo" />
+//         <img src={GoogleIcon} alt="Google Logo" />
+//       </AlternateLoginStyle>
+//     </div>
+//   );
+// }
+
+// export default SignUp;
+
+
+
+const SignUp = props => {
+
+  const [credentials, setCredentials] = useState({
+    username: "",
+    password: "",
+    birthdate: ""
+  });
+
+  const handleChange = e => {
+    setCredentials({
+      ...credentials,
+      [e.target.name]: e.target.value
+    });
+  };
+
+  const register = e => {
+    e.preventDefault();
+    axiosWithAuth()
+      .post("/register", credentials)
+      .then(res => {
+        // props.history.push("/login");
+      })
+      .catch(err => console.log(err));
+  };
+
   return (
-    <div>
-      <Header />
-      <TitleContainer>
-        <Title>Welcome to Opti-Sleep</Title>
-      </TitleContainer>
-      <FormStyle>
-        <Form className="form">
-          <FieldStyle>
-            <Form.Field>
-              <LabelStyle>Email</LabelStyle>
-              <InputStyle placeholder="Email" type="email" />
-            </Form.Field>
-          </FieldStyle>
-          <FieldStyle>
-            <Form.Field>
-              <LabelStyle>Password</LabelStyle>
-              <InputStyle placeholder="Password" type="password" />
-            </Form.Field>
-          </FieldStyle>
-          <FieldStyle>
-            <Form.Field>
-              <LabelStyle>Age</LabelStyle>
-              <InputStyle
-                placeholder="Age"
-                type="number"
-                style={{ width: 80 }}
-              />
-            </Form.Field>
-          </FieldStyle>
-
-          <ButtonStyle type="submit">Sign In</ButtonStyle>
-        </Form>
-      </FormStyle>
-
-      <AlternateLoginStyle>
-        <img src={FacebookIcon} alt="Facebook Logo" />
-        <img src={GoogleIcon} alt="Google Logo" />
-      </AlternateLoginStyle>
+    <div className="signup-div">
+      <section className="form">
+      <h1 className="sign-up-header">Sign up</h1>  
+      <form className="form-signup" onSubmit={register}>
+      <h1 className="form-title">Username:</h1>
+        <input
+          type="text"
+          name="username"
+          value={credentials.username}
+          onChange={handleChange}
+        />
+        <h1 className="form-title">Password:</h1>
+        <input
+          type="password"
+          name="password"
+          value={credentials.password}
+          onChange={handleChange}
+        />
+        <h1 className="form-title">Birthday:</h1>
+        <input
+          type="text"
+          name="birthdate"
+          value={credentials.birthdate}
+          onChange={handleChange}
+        />
+        <button className="signup-button">Sign Up</button>
+      </form>
+      </section>
     </div>
   );
-}
+};
 
 export default SignUp;
