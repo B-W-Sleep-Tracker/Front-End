@@ -63,12 +63,6 @@ const Links = styled.a`
   align-items: center;
 `;
 
-const UserLogo = styled.div`
-  width: 20px;
-  height: 20px;
-  background-color: #ffffff;
-`;
-
 const Ellipse = styled.div`
   width: 3px;
   height: 3px;
@@ -90,9 +84,6 @@ function Header() {
           <LogoImg src={LogoMobile} />
         </LogoContainer>
         <LinksContainer>
-          <Links>
-            <UserLogo></UserLogo> {/* TODO: Replace with User Logo */}
-          </Links>
           <Links>Sign In</Links>
           <Ellipse></Ellipse>
           <Links>Sign Up</Links>
