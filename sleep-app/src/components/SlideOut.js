@@ -7,14 +7,23 @@ import Graph from '../img/graph_icon.png';
 import Lullaby from '../img/lullaby_icon.png';
 import Pro from '../img/pro_icon.png';
 import Settings from '../img/settings_icon.png';
+import backgroundDesktop from "../img/backgroundDesktop.png";
+
 
 const Nav = styled.nav`
   width: 276px;
-  background-color: blue;
+  background-image: url(${backgroundDesktop});
   padding-top: 64px;
   height: 812px;
   opacity: 0.7;
 `;
+
+// const Content = styled.div`
+//     border: 1px solid #000;
+//     background-image: url(./img/bg.gif);
+//     width: 2000px;
+//     height: 2000px;
+// `;
 
 const LinkStyle = styled.a`
   display: flex;

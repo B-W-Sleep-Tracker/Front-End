@@ -14,13 +14,13 @@ import Alarms from './components/Alarms';
 function App() {
   return (
     <main>
-      <Route path ="/login" component={LoginForm} />
-      <Route exact path ="/sign-up" component={Signup}/>
-      <Route exact path ="/sleep-tracking" component={SleepTracking} />
+      <Route  path ="/login" component={LoginForm} />
+      <Route  path ="/sign-up" component={Signup}/>
+      <Route  path ="/sleep-tracking" component={SleepTracking} />
       <Route path="/SleepRating" component={SleepRating} />
       <Route path="/SleepResults" component={SleepResults}/>
       <Route path="/SlideOut" component={SlideOut} />
-      <Route path="/" component={Alarms} />
+      <Route exact path="/" component={Alarms} />
     </main>
   );
 }
