@@ -1,4 +1,13 @@
 body {
-	background: url('../img/backgroundDesktop.png')
+	background: url('../img/backgroundDesktop.png');
 }
+
+/* @media screen and (min-width: 800px) {
+	body {
+	background-size: cover;
+		height: 100%;
+		background-repeat: no-repeat;
+	}
+	
+} */
 

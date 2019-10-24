@@ -1,9 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 import LogoMobile from '../img/logoMobile.png';
+import SlideOut from './SlideOut';
 
 const HeaderStyle = styled.div`
-  width: 375px;
+  width: 100%;
   height: 40px;
   background-color: #000000;
   display: flex;
@@ -62,12 +63,6 @@ const Links = styled.a`
   align-items: center;
 `;
 
-const UserLogo = styled.div`
-  width: 20px;
-  height: 20px;
-  background-color: #ffffff;
-`;
-
 const Ellipse = styled.div`
   width: 3px;
   height: 3px;
@@ -89,9 +84,6 @@ function Header() {
           <LogoImg src={LogoMobile} />
         </LogoContainer>
         <LinksContainer>
-          <Links>
-            <UserLogo></UserLogo> {/* TODO: Replace with User Logo */}
-          </Links>
           <Links>Sign In</Links>
           <Ellipse></Ellipse>
           <Links>Sign Up</Links>

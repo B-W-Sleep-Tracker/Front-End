@@ -8,7 +8,7 @@ function SleepTracking() {
         <p>Lock your phone and set it near your pillow while you sleep.</p>
       </div>
       <div className="img">
-        <img src=""></img>
+        <img src="" alt=""></img>
       </div>
       <div className="button">
         <Button type="submit">Awake!</Button>
