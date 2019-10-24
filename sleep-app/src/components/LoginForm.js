@@ -1,11 +1,12 @@
-import React, {useState} from 'react';
+import React, {useState}from 'react';
 import './Login.css';
 import styled from 'styled-components';
 import FacebookIcon from '../img/facebookIcon.png';
 import GoogleIcon from '../img/googleIcon.png';
 import { Form } from 'semantic-ui-react';
+// import LogoMobile from '../img/logoMobile.png';
 import Header from './Header';
-import axiosWithAuth from "../utils/axioswithAuth";
+import axiosWithAuth  from '../utils/axioswithAuth';
 
 const Title = styled.h1`
   width: 100%;
@@ -29,7 +30,7 @@ const TitleContainer = styled.div`
 
 const FormStyle = styled.div`
   width: 294px;
-  height: 331px;
+  height: 282px;
   opacity: 0.8;
   border-radius: 10px;
   background-color: #c4c4c4;
@@ -38,6 +39,7 @@ const FormStyle = styled.div`
 
 const LabelStyle = styled.label`
   width: 118px;
+  height: 17px;
   font-family: Roboto;
   font-size: 24px;
   font-weight: normal;
@@ -46,7 +48,6 @@ const LabelStyle = styled.label`
   line-height: normal;
   letter-spacing: normal;
   color: #000000;
-  display: flex;
 `;
 
 const InputStyle = styled.input`
@@ -58,9 +59,10 @@ const InputStyle = styled.input`
 
 const FieldStyle = styled.div`
   &:first-child {
-    padding-top: 17px;
+    padding-top: 50px;
   }
-  padding-left: 17px;
+  padding-left: 27px;
+  padding-top: 11px;
 `;
 
 const ButtonStyle = styled.button`
@@ -76,7 +78,7 @@ const ButtonStyle = styled.button`
   line-height: normal;
   letter-spacing: normal;
   color: #f2f2f2;
-  margin-top: 10px;
+  margin-top: 39px;
   margin-left: 134px;
   border: none;
   box-shadow: 1px 4px 8px 1px #888888;
@@ -90,7 +92,36 @@ const AlternateLoginStyle = styled.div`
   margin-top: 43px;
 `;
 
-// function SignUp() {
+// class Login extends React.Component {
+//   state = {
+//     credentials: {
+//       email: ``,
+//       password: ``
+//     }
+//   };
+
+//   handleChange = e => {
+//     this.setState({
+//       credentials: {
+//         ...this.state.credentials,
+//         [e.target.name]: e.target.value
+//       }
+//     });
+//   };
+
+//   login = e => {
+//     e.preventDefault();
+//     axiosWithAuth()
+//       .post(`/login`, this.state.credentials)
+//       .then(res => {
+//         localStorage.setItem(`token`, res.data.payload);
+//         this.props.history.push(`/protected`);
+//       })
+//       .catch(err => console.log(err));
+//   };
+// }
+
+// function LoginForm() {
 //   return (
 //     <div>
 //       <Header />
@@ -98,31 +129,34 @@ const AlternateLoginStyle = styled.div`
 //         <Title>Welcome to Opti-Sleep</Title>
 //       </TitleContainer>
 //       <FormStyle>
-//         <Form className="form">
-//           <FieldStyle>
-//             <Form.Field>
-//               <LabelStyle>Email</LabelStyle>
-//               <InputStyle placeholder="Email" type="email" />
+        {/* <Form onSubmit={this.login} className="form"> */}
+        // <Form className="form">
+        //   <FieldStyle>
+        //     <Form.Field>
+        //       <LabelStyle>Email</LabelStyle>
+        //       <InputStyle
+        //         placeholder="Email"
+        //         type="email"
+        //         name="email"
+                // value={this.state.credentials.email}
+                // onChange={this.handleChange}
+//               />
 //             </Form.Field>
 //           </FieldStyle>
 //           <FieldStyle>
 //             <Form.Field>
 //               <LabelStyle>Password</LabelStyle>
-//               <InputStyle placeholder="Password" type="password" />
-//             </Form.Field>
-//           </FieldStyle>
-//           <FieldStyle>
-//             <Form.Field>
-//               <LabelStyle>Age</LabelStyle>
 //               <InputStyle
-//                 placeholder="Age"
-//                 type="number"
-//                 style={{ width: 80 }}
+//                 placeholder="Password"
+//                 type="password"
+//                 name="password"
+//                 // value={this.state.credentials.password}
+//                 // onChange={this.handle}
 //               />
 //             </Form.Field>
 //           </FieldStyle>
 
-//           <ButtonStyle type="submit">Sign In</ButtonStyle>
+//           <ButtonStyle type="submit">Log In</ButtonStyle>
 //         </Form>
 //       </FormStyle>
 
@@ -134,66 +168,49 @@ const AlternateLoginStyle = styled.div`
 //   );
 // }
 
-// export default SignUp;
+// export default LoginForm;
 
 
-
-const SignUp = props => {
-
+const LoginForm = (props) => {
   const [credentials, setCredentials] = useState({
     username: "",
-    password: "",
-    birthdate: ""
+    password: ""
   });
 
   const handleChange = e => {
     setCredentials({
-      ...credentials,
-      [e.target.name]: e.target.value
+        ...credentials,
+        [e.target.name]: e.target.value
+      
     });
   };
 
-  const register = e => {
+  const login = e => {
     e.preventDefault();
+    // axiosWithAuth ==> ?? an axios instance; .post() ==> ?? promise
     axiosWithAuth()
-      .post("/register", credentials)
+      .post("/login", credentials)
       .then(res => {
-        // props.history.push("/login");
+        localStorage.setItem("token", res.data.payload);
+        // redirect to the apps main page?
+        // props.history.push("/protected");
       })
       .catch(err => console.log(err));
   };
 
   return (
-    <div className="signup-div">
-      <section className="form">
-      <h1 className="sign-up-header">Sign up</h1>  
-      <form className="form-signup" onSubmit={register}>
-      <h1 className="form-title">Username:</h1>
-        <input
-          type="text"
-          name="username"
-          value={credentials.username}
-          onChange={handleChange}
-        />
-        <h1 className="form-title">Password:</h1>
-        <input
-          type="password"
-          name="password"
-          value={credentials.password}
-          onChange={handleChange}
-        />
-        <h1 className="form-title">Birthday:</h1>
-        <input
-          type="text"
-          name="birthdate"
-          value={credentials.birthdate}
-          onChange={handleChange}
-        />
-        <button className="signup-button">Sign Up</button>
+    <div>
+      <form onSubmit={login}>
+        Username:
+        <input type="text" name="username" value={credentials.username} onChange={handleChange} />
+        Password:
+        <input type="password" name="password" value={credentials.password} onChange={handleChange} />
+        <button>Log In</button>
       </form>
-      </section>
     </div>
   );
 };
 
-export default SignUp;
+export default LoginForm;
+
+
