@@ -62,6 +62,7 @@ const Links = styled.a`
   color: #ffffff;
   display: flex;
   align-items: center;
+  text-decoration: none;
 `;
 
 const Ellipse = styled.div`

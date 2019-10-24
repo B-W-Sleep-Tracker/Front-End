@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState}from 'react';
 import './Login.css';
 import styled from 'styled-components';
 import FacebookIcon from '../img/facebookIcon.png';
@@ -6,7 +6,7 @@ import GoogleIcon from '../img/googleIcon.png';
 import { Form } from 'semantic-ui-react';
 // import LogoMobile from '../img/logoMobile.png';
 import Header from './Header';
-import { axiosWithAuth } from '../utils/axioswithAuth';
+import axiosWithAuth  from '../utils/axioswithAuth';
 
 const Title = styled.h1`
   width: 100%;
@@ -121,51 +121,96 @@ const AlternateLoginStyle = styled.div`
 //   };
 // }
 
-function LoginForm() {
-  return (
-    <div>
-      <Header />
-      <TitleContainer>
-        <Title>Welcome to Opti-Sleep</Title>
-      </TitleContainer>
-      <FormStyle>
+// function LoginForm() {
+//   return (
+//     <div>
+//       <Header />
+//       <TitleContainer>
+//         <Title>Welcome to Opti-Sleep</Title>
+//       </TitleContainer>
+//       <FormStyle>
         {/* <Form onSubmit={this.login} className="form"> */}
-        <Form className="form">
-          <FieldStyle>
-            <Form.Field>
-              <LabelStyle>Email</LabelStyle>
-              <InputStyle
-                placeholder="Email"
-                type="email"
-                name="email"
+        // <Form className="form">
+        //   <FieldStyle>
+        //     <Form.Field>
+        //       <LabelStyle>Email</LabelStyle>
+        //       <InputStyle
+        //         placeholder="Email"
+        //         type="email"
+        //         name="email"
                 // value={this.state.credentials.email}
                 // onChange={this.handleChange}
-              />
-            </Form.Field>
-          </FieldStyle>
-          <FieldStyle>
-            <Form.Field>
-              <LabelStyle>Password</LabelStyle>
-              <InputStyle
-                placeholder="Password"
-                type="password"
-                name="password"
-                // value={this.state.credentials.password}
-                // onChange={this.handle}
-              />
-            </Form.Field>
-          </FieldStyle>
+//               />
+//             </Form.Field>
+//           </FieldStyle>
+//           <FieldStyle>
+//             <Form.Field>
+//               <LabelStyle>Password</LabelStyle>
+//               <InputStyle
+//                 placeholder="Password"
+//                 type="password"
+//                 name="password"
+//                 // value={this.state.credentials.password}
+//                 // onChange={this.handle}
+//               />
+//             </Form.Field>
+//           </FieldStyle>
 
-          <ButtonStyle type="submit">Log In</ButtonStyle>
-        </Form>
-      </FormStyle>
+//           <ButtonStyle type="submit">Log In</ButtonStyle>
+//         </Form>
+//       </FormStyle>
 
-      <AlternateLoginStyle>
-        <img src={FacebookIcon} alt="Facebook Logo" />
-        <img src={GoogleIcon} alt="Google Logo" />
-      </AlternateLoginStyle>
+//       <AlternateLoginStyle>
+//         <img src={FacebookIcon} alt="Facebook Logo" />
+//         <img src={GoogleIcon} alt="Google Logo" />
+//       </AlternateLoginStyle>
+//     </div>
+//   );
+// }
+
+// export default LoginForm;
+
+
+const LoginForm = (props) => {
+  const [credentials, setCredentials] = useState({
+    username: "",
+    password: ""
+  });
+
+  const handleChange = e => {
+    setCredentials({
+        ...credentials,
+        [e.target.name]: e.target.value
+      
+    });
+  };
+
+  const login = e => {
+    e.preventDefault();
+    // axiosWithAuth ==> ?? an axios instance; .post() ==> ?? promise
+    axiosWithAuth()
+      .post("/login", credentials)
+      .then(res => {
+        localStorage.setItem("token", res.data.payload);
+        // redirect to the apps main page?
+        // props.history.push("/protected");
+      })
+      .catch(err => console.log(err));
+  };
+
+  return (
+    <div>
+      <form onSubmit={login}>
+        Username:
+        <input type="text" name="username" value={credentials.username} onChange={handleChange} />
+        Password:
+        <input type="password" name="password" value={credentials.password} onChange={handleChange} />
+        <button>Log In</button>
+      </form>
     </div>
   );
-}
+};
 
 export default LoginForm;
+
+
