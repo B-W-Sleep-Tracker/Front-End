@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import { Route, path } from "react-router-dom";
 import LoginForm from './components/LoginForm';
 import Signup from './components/Signup';
 import SleepTracking from './components/SleepTracking';
@@ -12,14 +13,15 @@ import Alarms from './components/Alarms';
 
 function App() {
   return (
-    // <Router>
-    // <LoginForm />
-    // <Signup />
-    // <SleepTracking />
-    // <SleepRating />
-    // <SleepResults />
-    // <SlideOut />
-    <Alarms />
+    <main>
+      <Route path ="/login" component={LoginForm} />
+      <Route exact path ="/sign-up" component={Signup}/>
+      <Route exact path ="/sleep-tracking" component={SleepTracking} />
+      <Route path="/SleepRating" component={SleepRating} />
+      <Route path="/SleepResults" component={SleepResults}/>
+      <Route path="/SlideOut" component={SlideOut} />
+      <Route path="/" component={Alarms} />
+    </main>
   );
 }
 
