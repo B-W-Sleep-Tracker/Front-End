@@ -17,9 +17,10 @@ function App() {
       <Route  path ="/login" component={LoginForm} />
       <Route  path ="/sign-up" component={Signup}/>
       <Route  path ="/sleep-tracking" component={SleepTracking} />
-      <Route path="/SleepRating" component={SleepRating} />
-      <Route path="/SleepResults" component={SleepResults}/>
-      <Route path="/SlideOut" component={SlideOut} />
+      <Route path="/sleep-rating" component={SleepRating} />
+      <Route path="/sleep-results" component={SleepResults}/>
+      <Route path="/slide-out" component={SlideOut} />
+      <Route path="/graph" component={Graph} />
       <Route exact path="/" component={Alarms} />
     </main>
   );

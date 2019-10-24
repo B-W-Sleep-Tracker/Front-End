@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Route, path, Link } from "react-router-dom";
 import Header from './Header';
 import Bell from '../img/bell.png';
 import Stats from '../img/stats_icon.png';
@@ -17,13 +18,6 @@ const Nav = styled.nav`
   height: 812px;
   opacity: 0.7;
 `;
-
-// const Content = styled.div`
-//     border: 1px solid #000;
-//     background-image: url(./img/bg.gif);
-//     width: 2000px;
-//     height: 2000px;
-// `;
 
 const LinkStyle = styled.a`
   display: flex;
@@ -46,30 +40,42 @@ const ImgStyle = styled.img`
 function SlideOut() {
   return (
     <Nav className="nav">
-      <LinkStyle className="link-Style">
-        <ImgStyle src={Bell} className="img-style" />
-        <h1>Alarms</h1>
-      </LinkStyle>
-      <LinkStyle className="link-Style">
-        <ImgStyle src={Stats} className="img-style" />
-        <h1>Stats</h1>
-      </LinkStyle>
-      <LinkStyle className="link-Style">
-        <ImgStyle src={Graph} className="img-style" />
-        <h1>Graph</h1>
-      </LinkStyle>
+      <Link to={`/`}>
+        <LinkStyle className="link-Style">
+          <ImgStyle src={Bell} className="img-style" />
+          <h1>Alarms</h1>
+        </LinkStyle>
+      </Link>
+
+      <Link to={`/sleep-results`}>
+        <LinkStyle className="link-Style">
+          <ImgStyle src={Stats} className="img-style" />
+          <h1>Stats</h1>
+        </LinkStyle>
+      </Link>
+
+      <Link to={`/graph`}>
+        <LinkStyle className="link-Style">
+          <ImgStyle src={Graph} className="img-style" />
+          <h1>Graph</h1>
+        </LinkStyle>
+      </Link>
+
       <LinkStyle className="link-Style">
         <ImgStyle src={Lullaby} className="img-style" />
         <h1>Lullaby</h1>
       </LinkStyle>
+
       <LinkStyle className="link-Style">
         <ImgStyle src={Pro} className="img-style" />
         <h1>Pro</h1>
       </LinkStyle>
+
       <LinkStyle className="link-Style">
         <ImgStyle src={Settings} className="img-style" />
         <h1>Settings</h1>
       </LinkStyle>
+
     </Nav>
   );
 }
