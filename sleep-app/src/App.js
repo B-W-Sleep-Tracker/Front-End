@@ -1,4 +1,5 @@
 import React from 'react';
+import { Route } from 'react-router-dom';
 import './App.css';
 import LoginForm from './components/LoginForm';
 import Signup from './components/Signup';
@@ -19,7 +20,15 @@ function App() {
     // <SleepRating />
     // <SleepResults />
     // <SlideOut />
-    <Alarms />
+    <main>
+      <Route exact path="/LoginForm" component={LoginForm} />
+      <Route exact path="/Signup" component={Signup} />
+      <Route exact path="/SleepTracking" component={SleepTracking} />
+      <Route exact path="/SleepRating" component={SleepRating} />
+      <Route exact path="/SleepResults" component={SleepResults} />
+      <Route exact path="/SlideOut" component={SlideOut} />
+      <Route exact path="/" component={Alarms} />
+    </main>
   );
 }
 

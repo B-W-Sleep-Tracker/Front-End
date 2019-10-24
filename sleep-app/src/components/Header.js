@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import LogoMobile from '../img/logoMobile.png';
 import SlideOut from './SlideOut';
@@ -61,6 +62,7 @@ const Links = styled.a`
   color: #ffffff;
   display: flex;
   align-items: center;
+  text-decoration: none;
 `;
 
 const Ellipse = styled.div`
@@ -84,9 +86,14 @@ function Header() {
           <LogoImg src={LogoMobile} />
         </LogoContainer>
         <LinksContainer>
-          <Links>Sign In</Links>
+          <Link to={`/LoginForm`}>
+            <Links>Sign In</Links>
+          </Link>
+
           <Ellipse></Ellipse>
-          <Links>Sign Up</Links>
+          <Link to={`/Signup`}>
+            <Links>Sign Up</Links>
+          </Link>
         </LinksContainer>
       </HeaderStyle>
     </div>
