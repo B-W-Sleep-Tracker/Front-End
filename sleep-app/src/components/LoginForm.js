@@ -191,12 +191,14 @@ const LoginForm = (props) => {
     axiosWithAuth()
       .post("/login", credentials)
       .then(res => {
-        localStorage.setItem("token", res.data.payload);
+        localStorage.setItem("token", res.data.token);
         // redirect to the apps main page?
         // props.history.push("/protected");
       })
       .catch(err => console.log(err));
   };
+
+
 
   return (
     <div>
