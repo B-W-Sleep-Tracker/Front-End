@@ -170,7 +170,6 @@ const SignUp = props => {
       <TitleContainer>
         <Title>Welcome to Opti-Sleep</Title>
       </TitleContainer>
-      
       <FormStyle>  
         <Form onSubmit={register} className='form-signup'>
           <FieldStyle>          
