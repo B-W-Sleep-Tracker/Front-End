@@ -28,6 +28,7 @@ function App() {
       <Route path="/alarms" component={Alarms} />
       <Route path ="/user-list" component={UserList} />
     </main>
+
   );
 }
 

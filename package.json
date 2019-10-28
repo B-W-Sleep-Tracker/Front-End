@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "mdbreact": "^4.21.1",
     "styled-components": "^4.4.0"
   }
 }
