@@ -7,6 +7,7 @@ import { Form } from 'semantic-ui-react';
 // import LogoMobile from '../img/logoMobile.png';
 import Header from './Header';
 import axiosWithAuth  from '../utils/axioswithAuth';
+import { Route, path, Link } from "react-router-dom";
 
 
 const Title = styled.h1`
@@ -93,34 +94,7 @@ const AlternateLoginStyle = styled.div`
   margin-top: 43px;
 `;
 
-// class Login extends React.Component {
-//   state = {
-//     credentials: {
-//       email: ``,
-//       password: ``
-//     }
-//   };
 
-//   handleChange = e => {
-//     this.setState({
-//       credentials: {
-//         ...this.state.credentials,
-//         [e.target.name]: e.target.value
-//       }
-//     });
-//   };
-
-//   login = e => {
-//     e.preventDefault();
-//     axiosWithAuth()
-//       .post(`/login`, this.state.credentials)
-//       .then(res => {
-//         localStorage.setItem(`token`, res.data.payload);
-//         this.props.history.push(`/protected`);
-//       })
-//       .catch(err => console.log(err));
-//   };
-// }
 
 // function LoginForm() {
 //   return (
@@ -129,18 +103,19 @@ const AlternateLoginStyle = styled.div`
 //       <TitleContainer>
 //         <Title>Welcome to Opti-Sleep</Title>
 //       </TitleContainer>
+
 //       <FormStyle>
-        {/* <Form onSubmit={this.login} className="form"> */}
-        // <Form className="form">
-        //   <FieldStyle>
-        //     <Form.Field>
-        //       <LabelStyle>Email</LabelStyle>
-        //       <InputStyle
-        //         placeholder="Email"
-        //         type="email"
-        //         name="email"
-                // value={this.state.credentials.email}
-                // onChange={this.handleChange}
+//         {/* <Form onSubmit={this.login} className="form"> */}
+//         <Form className="form">
+//           <FieldStyle>
+//             <Form.Field>
+//               <LabelStyle>Email</LabelStyle>
+//               <InputStyle
+//                 placeholder="Email"
+//                 type="email"
+//                 name="email"
+//                 value={this.state.credentials.email}
+//                 onChange={this.handleChange}
 //               />
 //             </Form.Field>
 //           </FieldStyle>
@@ -151,8 +126,8 @@ const AlternateLoginStyle = styled.div`
 //                 placeholder="Password"
 //                 type="password"
 //                 name="password"
-//                 // value={this.state.credentials.password}
-//                 // onChange={this.handle}
+//                 value={this.state.credentials.password}
+//                 onChange={this.handle}
 //               />
 //             </Form.Field>
 //           </FieldStyle>
@@ -169,7 +144,7 @@ const AlternateLoginStyle = styled.div`
 //   );
 // }
 
-// export default LoginForm;
+
 
 
 const LoginForm = (props) => {
@@ -199,17 +174,29 @@ const LoginForm = (props) => {
       .catch(err => console.log(err));
   };
 
+
+
   return (
     <div>
-      <form onSubmit={login}>
-        Username:
-        <input type="text" name="username" value={credentials.username} onChange={handleChange} />
-        Password:
-        <input type="password" name="password" value={credentials.password} onChange={handleChange} />
-
-            <button>Log In</button>
-        
-      </form>
+      <Header />
+      <TitleContainer>
+        <Title>Welcome to Opti-Sleep</Title>
+      </TitleContainer>
+      
+      <FormStyle>  
+        <Form onSubmit={login} className='form'>
+          <FieldStyle>          Username:
+          <InputStyle type="text" name="username" value={credentials.username} onChange={handleChange} />
+          Password:
+          <InputStyle type="password" name="password" value={credentials.password} onChange={handleChange} />
+            <ButtonStyle>
+              <Link to={`/`}>
+                Log In
+              </Link>
+            </ButtonStyle>
+          </FieldStyle>
+        </Form>
+      </FormStyle>
     </div>
   );
 };

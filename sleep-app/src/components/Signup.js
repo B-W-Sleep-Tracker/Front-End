@@ -6,6 +6,7 @@ import GoogleIcon from '../img/googleIcon.png';
 import { Form } from 'semantic-ui-react';
 import Header from './Header';
 import axiosWithAuth from "../utils/axioswithAuth";
+import { Route, path, Link } from "react-router-dom";
 
 const Title = styled.h1`
   width: 100%;
@@ -165,33 +166,37 @@ const SignUp = props => {
 
   return (
     <div className="signup-div">
-      <section className="form">
-      <h1 className="sign-up-header">Sign up</h1>  
-      <form className="form-signup" onSubmit={register}>
-      <h1 className="form-title">Username:</h1>
-        <input
-          type="text"
-          name="username"
-          value={credentials.username}
-          onChange={handleChange}
-        />
-        <h1 className="form-title">Password:</h1>
-        <input
-          type="password"
-          name="password"
-          value={credentials.password}
-          onChange={handleChange}
-        />
-        <h1 className="form-title">Birthday:</h1>
-        <input
+      <Header />
+      <TitleContainer>
+        <Title>Welcome to Opti-Sleep</Title>
+      </TitleContainer>
+      <FormStyle>  
+        <Form onSubmit={register} className='form-signup'>
+          <FieldStyle>          
+            <p>Sign up:</p>
+          <InputStyle 
+            type="text" 
+            name="username" 
+            value={credentials.username} 
+            onChange={handleChange} />
+
+          <p>Password:</p>
+          <InputStyle type="password" name="password" value={credentials.password} onChange={handleChange} />
+          <p>Birthday</p>
+        <InputStyle
           type="text"
           name="birthdate"
           value={credentials.birthdate}
           onChange={handleChange}
         />
-        <button className="signup-button">Sign Up</button>
-      </form>
-      </section>
+            <ButtonStyle>
+              <Link to={`/`}>
+                Sign up
+              </Link>
+            </ButtonStyle>
+          </FieldStyle>
+        </Form>
+      </FormStyle>
     </div>
   );
 };

@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import Header from './Header';
 import NewAlarm from '../img/newAlarm.png';
 import ActiveSlider from '../img/active_mobile.png';
+import { Route, path, Link } from "react-router-dom";
 
 const ImgContainer = styled.div`
   width: 100%;
@@ -87,7 +88,9 @@ function Alarms() {
         </Content>
       </AlarmContainer>
       <ButtonContainer>
-        <ButtonStyle type="submit">Record Sleep</ButtonStyle>
+        <Link to={`/sleep-tracking`}>
+          <ButtonStyle type="submit">Record Sleep</ButtonStyle>
+        </Link>
       </ButtonContainer>
     </div>
   );
