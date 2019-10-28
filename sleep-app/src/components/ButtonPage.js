@@ -1,12 +1,13 @@
-// import React, { Fragment, useState } from "react";
-// import { MDBBtn } from "mdbreact";
-// import GoodRating from "../img/Graph Emojis/4 Rating.png";
-// import AverageRating from "../img/Graph Emojis/3 Rating.png";
-// import MehRating from "../img/Graph Emojis/2 Rating.png";
-// import BadRating from "../img/Graph Emojis/1 Rating.png";
+import React, { Fragment, useState } from "react";
+import { MDBBtn } from "mdbreact";
+import GoodRating from "../img/Graph Emojis/4 Rating.png";
+import AverageRating from "../img/Graph Emojis/3 Rating.png";
+import MehRating from "../img/Graph Emojis/2 Rating.png";
+import BadRating from "../img/Graph Emojis/1 Rating.png";
 
 // const [ editing, setEditing] = useState(false);
 // const [ dayToEdit, setDayToEdit] = useState();
+// const [ scaleValue, setScaleValue] = useState();
 
 // const editDate = day => {
 //   setEditing(true);
@@ -19,74 +20,76 @@
 
 
 
-// const ButtonPage = () => {
-//   return (
-//     <Fragment>
-//       <MDBBtn rounded color="purple"> <div className="btn-text-top"> 27 </div><img src={GoodRating} alt="good rating" />
-//       <div className="btn-text-btm">
-//         Sun</div></MDBBtn>
-// {editing && (
-//   <form onSubmit={saveEdit}>
-//     <legend>Edit Sleep:</legend>
-//     <label>
-//       Day:
-//       <input
-//         onChange={e =>
-//           setDayToEdit({ ...dayToEdit, day: e.target.value })
-//         }
-//         value={dayToEdit.day}
-//       />
-//     </label>
-//     <label>
-//       Hours:
-//       <input
-//         onChange={e =>
-//           setDayToEdit({ ...dayToEdit, day: e.target.value })
-//         }
-//         value={dayToEdit.day}
-//       />
-//     </label>
-//     <div className="button-row">
-//       <button type="submit">Save</button>
-//       <button onClick={() => setEditing(false)}>Cancel</button>
-//     </div>
-//   </form>
-// )}
-// <div className="spacer" />
+const ButtonPage = (props) => {
+const getRating= e => {
+  props.updateHours(e.target.alt, e.target.id)
+// if(e.target.id === "Sun" ){
+//  console.log(e.target.alt)
+//   if(e.target.alt === "good rating"){
+//     console.log(props.graphData)
+//     props.graphData[0].hours=8;
+//   }
+//   else if (e.target.alt === "average rating") {
+//     props.graphData[0].hours=6;
+//   }
+//   else if (e.target.alt === "meh rating") {
+//     props.graphData[0].hours=4;
+//   }
+//   else if (e.target.alt === "bad rating") {
+//     props.graphData[0].hours=1;
+//   }
 
-//       <MDBBtn rounded color="secondary"><div className="btn-text-top"> 28 </div><img src={BadRating} alt="bad rating" />
-//       <div className="btn-text-btm">
-//         Mon</div></MDBBtn>
-
-
-//       <MDBBtn rounded color="secondary"><div className="btn-text-top"> 29 </div><img src={MehRating} alt="meh rating" /> 
-//       <div className="btn-text-btm">
-//         Tues</div></MDBBtn>
-
-
-//       <MDBBtn rounded color="secondary"><div className="btn-text-top"> 30 </div><img src={BadRating} alt="bad rating" />
-//       <div className="btn-text-btm">
-//         Weds</div></MDBBtn>
-
-
-//       <MDBBtn rounded color="secondary"><div className="btn-text-top"> 31 </div> <img src={AverageRating} alt="ave rating"/>
-//       <div className="btn-text-btm">
-//         Thurs</div> </MDBBtn>
-
-
-//       <MDBBtn rounded color="success"><div className="btn-text-top"> 32 </div><img src={GoodRating} alt="good rating" />
-//       <div className="btn-text-btm">
-//         Fri</div></MDBBtn>
-
-
-//       <MDBBtn rounded color="info"><div className="btn-text-top"> 33 </div> <img src={GoodRating} alt="good rating" />
-//       <div className="btn-text-btm">
-//         Sat</div></MDBBtn>
-
-
-      
-//     </Fragment>
-//   );
 // }
+}
 
-// export default ButtonPage;
+
+  return (
+      <div className="all-btns">
+        <div className="btn-text-top"> <h3>Sun </h3>
+          <button onClick={getRating}><img src={GoodRating} alt="good rating" id="Sunday" /></button>
+          <button onClick={getRating}><img src={AverageRating} alt="average rating"id="Sunday" /></button>
+          <button onClick={getRating}><img src={MehRating} alt="meh rating" id="Sunday"/></button>
+          <button onClick={getRating}><img src={BadRating} alt="bad rating" id="Sunday"/></button>
+        </div>
+        <div className="btn-text-top"> <h3>Mon </h3>
+          <button onClick={getRating}><img src={GoodRating} alt="good rating" id="Monday"/></button>
+          <button onClick={getRating}><img src={AverageRating} alt="average rating" id="Monday"/></button>
+          <button onClick={getRating}><img src={MehRating} alt="meh rating" id="Monday"/></button>
+          <button onClick={getRating}><img src={BadRating} alt="bad rating" id="Monday"/></button>
+        </div>
+        <div className="btn-text-top"> <h3>Tues </h3>
+          <button onClick={getRating}><img src={GoodRating} alt="good rating" id="Tuesday"/></button>
+          <button onClick={getRating}><img src={AverageRating} alt="average rating" id="Tuesday"/></button>
+          <button onClick={getRating}><img src={MehRating} alt="meh rating" id="Tuesday"/></button>
+          <button onClick={getRating}><img src={BadRating} alt="bad rating" id="Tuesday"/></button>
+       </div>
+        <div className="btn-text-top"> <h3>Weds </h3>
+          <button onClick={getRating}><img src={GoodRating} alt="good rating" id="Wednesday" /></button>
+          <button onClick={getRating}><img src={AverageRating} alt="average rating" id="Wednesday" /></button>
+          <button onClick={getRating}><img src={MehRating} alt="meh rating" id="Wednesday"/></button>
+          <button onClick={getRating}><img src={BadRating} alt="bad rating" id="Wednesday"/></button>
+        </div>
+        <div className="btn-text-top"> <h3>Thurs </h3>
+          <button onClick={getRating}><img src={GoodRating} alt="good rating" id="Thursday" /></button>
+          <button onClick={getRating}><img src={AverageRating} alt="average rating" id="Thursday" /></button>
+          <button onClick={getRating}><img src={MehRating} alt="meh rating" id="Thursday"/></button>
+          <button onClick={getRating}><img src={BadRating} alt="bad rating" id="Thursday"/></button>
+         </div>
+        <div className="btn-text-top"> <h3>Fri </h3>
+          <button onClick={getRating}><img src={GoodRating} alt="good rating" id="Friday" /></button>
+          <button onClick={getRating}><img src={AverageRating} alt="average rating" id="Friday"/></button>
+          <button onClick={getRating}><img src={MehRating} alt="meh rating" id="Friday"/></button>
+          <button onClick={getRating}><img src={BadRating} alt="bad rating" id="Friday"/></button>
+        </div>
+        <div className="btn-text-top"> <h3>Sat </h3>
+          <button onClick={getRating}><img src={GoodRating} alt="good rating" id="Saturday"/></button>
+          <button onClick={getRating}><img src={AverageRating} alt="average rating" id="Saturday" /></button>
+          <button onClick={getRating}><img src={MehRating} alt="meh rating" id="Saturday"/></button>
+          <button onClick={getRating}><img src={BadRating} alt="bad rating" id="Saturday" /></button>
+        </div>
+        </div>
+    
+  );
+}
+
+export default ButtonPage;

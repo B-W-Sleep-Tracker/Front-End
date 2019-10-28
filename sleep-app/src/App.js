@@ -16,6 +16,7 @@ import Alarms from './components/Alarms';
 
 function App() {
   return (
+
     <main>
       <Route  path ="/login" component={LoginForm} />
       <Route  path ="/sign-up" component={Signup}/>
@@ -23,9 +24,10 @@ function App() {
       <Route path="/sleep-rating" component={SleepRating} />
       <Route path="/sleep-results" component={SleepResults}/>
       <Route path="/slide-out" component={SlideOut} />
-      <Route path="/graph" component={Graph} />
-      <Route exact path="/" component={Alarms} />
+      <Route exact path="/" component={Graph} />
+      <Route path="/alarms" component={Alarms} />
     </main>
+
   );
 }
 
