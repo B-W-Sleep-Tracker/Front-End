@@ -8,6 +8,7 @@ import { Form } from 'semantic-ui-react';
 import Header from './Header';
 import axiosWithAuth  from '../utils/axioswithAuth';
 
+
 const Title = styled.h1`
   width: 100%;
   height: 28px;
@@ -205,7 +206,9 @@ const LoginForm = (props) => {
         <input type="text" name="username" value={credentials.username} onChange={handleChange} />
         Password:
         <input type="password" name="password" value={credentials.password} onChange={handleChange} />
-        <button>Log In</button>
+
+            <button>Log In</button>
+        
       </form>
     </div>
   );

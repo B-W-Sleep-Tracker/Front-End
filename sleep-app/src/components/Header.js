@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import LogoMobile from '../img/logoMobile.png';
 import SlideOut from './SlideOut';
+import { Route, path, Link } from "react-router-dom";
 
 const HeaderStyle = styled.div`
   width: 100%;
@@ -61,6 +62,7 @@ const Links = styled.a`
   color: #ffffff;
   display: flex;
   align-items: center;
+  text-decoration: none;
 `;
 
 const Ellipse = styled.div`
@@ -75,18 +77,24 @@ function Header() {
   return (
     <div>
       <HeaderStyle>
-        <Menu>
-          <MenuLines></MenuLines>
-          <MenuLines></MenuLines>
-          <MenuLines></MenuLines>
-        </Menu>
+        <Link to={`/slide-out`}>
+          <Menu>
+            <MenuLines></MenuLines>
+            <MenuLines></MenuLines>
+            <MenuLines></MenuLines>
+          </Menu>
+        </Link>
         <LogoContainer>
           <LogoImg src={LogoMobile} />
         </LogoContainer>
         <LinksContainer>
+        <Link to={`/login`}>
           <Links>Sign In</Links>
+        </Link>
           <Ellipse></Ellipse>
+        <Link to={`/sign-up`}>
           <Links>Sign Up</Links>
+        </Link>
         </LinksContainer>
       </HeaderStyle>
     </div>

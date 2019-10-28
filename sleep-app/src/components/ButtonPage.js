@@ -45,48 +45,48 @@ const getRating= e => {
 
   return (
       <div className="all-btns">
-        <div className="btn-text-top"> Sun </div>
+        <div className="btn-text-top"> <h3>Sun </h3>
           <button onClick={getRating}><img src={GoodRating} alt="good rating" id="Sunday" /></button>
           <button onClick={getRating}><img src={AverageRating} alt="average rating"id="Sunday" /></button>
           <button onClick={getRating}><img src={MehRating} alt="meh rating" id="Sunday"/></button>
           <button onClick={getRating}><img src={BadRating} alt="bad rating" id="Sunday"/></button>
-         
-        <div className="btn-text-top"> Mon </div>
+        </div>
+        <div className="btn-text-top"> <h3>Mon </h3>
           <button onClick={getRating}><img src={GoodRating} alt="good rating" id="Monday"/></button>
           <button onClick={getRating}><img src={AverageRating} alt="average rating" id="Monday"/></button>
           <button onClick={getRating}><img src={MehRating} alt="meh rating" id="Monday"/></button>
           <button onClick={getRating}><img src={BadRating} alt="bad rating" id="Monday"/></button>
-
-        <div className="btn-text-top"> Tues </div>
+        </div>
+        <div className="btn-text-top"> <h3>Tues </h3>
           <button onClick={getRating}><img src={GoodRating} alt="good rating" id="Tuesday"/></button>
           <button onClick={getRating}><img src={AverageRating} alt="average rating" id="Tuesday"/></button>
           <button onClick={getRating}><img src={MehRating} alt="meh rating" id="Tuesday"/></button>
           <button onClick={getRating}><img src={BadRating} alt="bad rating" id="Tuesday"/></button>
-
-        <div className="btn-text-top"> Weds </div>
+       </div>
+        <div className="btn-text-top"> <h3>Weds </h3>
           <button onClick={getRating}><img src={GoodRating} alt="good rating" id="Wednesday" /></button>
           <button onClick={getRating}><img src={AverageRating} alt="average rating" id="Wednesday" /></button>
           <button onClick={getRating}><img src={MehRating} alt="meh rating" id="Wednesday"/></button>
           <button onClick={getRating}><img src={BadRating} alt="bad rating" id="Wednesday"/></button>
-
-        <div className="btn-text-top"> Thurs </div>
+        </div>
+        <div className="btn-text-top"> <h3>Thurs </h3>
           <button onClick={getRating}><img src={GoodRating} alt="good rating" id="Thursday" /></button>
           <button onClick={getRating}><img src={AverageRating} alt="average rating" id="Thursday" /></button>
           <button onClick={getRating}><img src={MehRating} alt="meh rating" id="Thursday"/></button>
           <button onClick={getRating}><img src={BadRating} alt="bad rating" id="Thursday"/></button>
-
-        <div className="btn-text-top"> Fri </div>
+         </div>
+        <div className="btn-text-top"> <h3>Fri </h3>
           <button onClick={getRating}><img src={GoodRating} alt="good rating" id="Friday" /></button>
           <button onClick={getRating}><img src={AverageRating} alt="average rating" id="Friday"/></button>
           <button onClick={getRating}><img src={MehRating} alt="meh rating" id="Friday"/></button>
           <button onClick={getRating}><img src={BadRating} alt="bad rating" id="Friday"/></button>
-
-        <div className="btn-text-top"> Sat </div>
+        </div>
+        <div className="btn-text-top"> <h3>Sat </h3>
           <button onClick={getRating}><img src={GoodRating} alt="good rating" id="Saturday"/></button>
           <button onClick={getRating}><img src={AverageRating} alt="average rating" id="Saturday" /></button>
           <button onClick={getRating}><img src={MehRating} alt="meh rating" id="Saturday"/></button>
           <button onClick={getRating}><img src={BadRating} alt="bad rating" id="Saturday" /></button>
-
+        </div>
         </div>
     
   );
