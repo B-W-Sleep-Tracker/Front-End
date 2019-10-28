@@ -1,2 +1,2 @@
 [build]
-  base = "sleep-app";
+  base = "sleep-app"
