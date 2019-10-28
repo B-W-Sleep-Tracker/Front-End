@@ -5,13 +5,10 @@
 } */
 
 .App {
-  text-align: center;
+  
   padding: 20px;
-  margin: 20px;;
-}
-
-.App-logo {
-  height: 40vmin;
+  margin: 20px;
+  position: absolute;;
 }
 
 .App-header {
@@ -33,8 +30,9 @@
 .recharts-surface {
   background-color: #c4c4c4;
   padding: 60px;
+  align-items: center;
   
-}
+} 
 
 .recharts-cartesian-grid {
   padding: 20%;
@@ -56,16 +54,16 @@ label{
 }
 
 button   {
-  margin-top:60px;
-  width: 140px;
-  height: 150px;
-  opacity: 0.75;
-  border-radius: 20px;
-  background-color: #4a3063;
+ cursor: pointer;
 }
 
+button:hover{
+background-color: dodgerblue;
+}
+
+
 .btn-text-top {
-  width: 56px;
+  width: 90%;
   height: 28px;
   font-family: Roboto;
   font-size: 24px;
@@ -76,8 +74,13 @@ button   {
   letter-spacing: normal;
   color: #ffffff;
   margin: auto;
+  background-color: #4a3063;
+  padding:5px;
+  margin-top:10px;
+  align-content: center;
+  opacity: 0.75;
 }
-
+/* 
 .btn-text-btm {
   width: 56px;
   height: 28px;
@@ -90,6 +93,40 @@ button   {
   letter-spacing: normal;
   color: #ffffff;
   margin:auto;
+} */
+h1 {
+ color: white;
+  text-align: center;
+  padding-top:20px;
+  font-size: 50px;
 }
 
 
+.Ripple-parent {
+align-items: center;
+height: 30%;
+background-color: #4a3063;
+}
+
+.all-btns{
+  align-items: center;
+  margin-left: 20%;
+  margin-top:60px;
+  width: 140px;
+  height: 150px;
+  opacity: 0.75;
+  border-radius: 20px;
+  text-align: center;
+  /* background-color: #4a3063; */
+  /* margin: 0px 0px 15px 15px; */
+  padding:10px;
+  position: relative;
+  float: left;
+  
+}
+
+img {
+  width: 50px;
+    height: auto;
+    background-color: #4a3063;
+}

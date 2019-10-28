@@ -21,9 +21,8 @@ function App() {
 
     <div>
       {/* <Signup />
-      <LoginForm/> */}
+      <LoginForm/>  */}
       <Graph />
-      <ButtonPage />
     </div>
   
 
