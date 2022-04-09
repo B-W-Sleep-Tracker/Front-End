@@ -8,7 +8,7 @@
     "daypilot-pro-react": "https://npm.daypilot.org/daypilot-pro-react/trial/2019.3.4012.tar.gz",
     "lodash": "^4.17.15",
     "mdbreact": "^4.21.1",
-    "moment": "^2.24.0",
+    "moment": "^2.29.2",
     "react": "^16.10.2",
     "react-datetime": "^2.16.3",
     "react-dom": "^16.10.2",
